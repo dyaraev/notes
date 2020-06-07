@@ -10,13 +10,25 @@ dd if=/dev/zero of=floppy.img bs=1024 count=1440
 # floppy.img is a path to the image file
 ```
 
+### Attach Image
+
+```shell
+hdiutil attach -nomount floppy.img
+```
+
 ### Format Image
 
 ```shell
-diskutil eraseVolume MS-DOS DISKNAME `hdiutil attach -nomount floppy.img`
+newfs_msdos -f 1440 -v LABEL /dev/disk2
 
-# MS-DOS is a filesystem
-# DISKNAME is disk label
-# floppy.img is a path to the image file
+# LABEL is disk label
+# /dev/disk2 is the attached device to format
 ```
+
+### Detach Image
+
+```shell
+hdiutil detach /dev/disk2
+```
+
 
