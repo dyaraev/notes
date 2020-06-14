@@ -1,6 +1,6 @@
 ## Install Ubuntu Mate on Raspberry Pi 4
 
-### Download Ubuntu Image.
+### Download Ubuntu Image
 
 Download Ubuntu Server for Raspberry Pi from the [official website](https://ubuntu.com/download/raspberry-pi). The following steps will describe installation and configuration of Ubuntu 20.04 LTS.
 
@@ -105,7 +105,7 @@ In this file you can reconfigure display options. For example, you can specify G
 gpu_mem=128
 ```
 
-More information on video option can be found [here](https://www.raspberrypi.org/documentation/configuration/config-txt/video.md).
+More information on video option can be found [here](https://www.raspberrypi.org/documentation/configuration/config-txt/video.md). Also, there is [a page](https://www.raspberrypi.org/documentation/configuration/hdmi-config.md) with the official documentation on the HDMI configuration.
 
 
 If you have a monitor with resulution 2560x1440, it may be difficult to find a configuration for it. As an option, you can try to add the following lines to your `/boot/firmware/usercfg.txt`:
