@@ -1,4 +1,4 @@
-## Install Ubuntu Mate on Raspberry Pi 4
+## Installing Ubuntu Mate on Raspberry Pi 4
 
 ### Download Ubuntu Image
 
