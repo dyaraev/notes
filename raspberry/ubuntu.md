@@ -25,7 +25,7 @@ Insert your SD Card into the Raspberry and turn on the board. Log in to the syst
 
 ### Setup Wi-Fi
 
-To configure wi-fi you will need to modify a couple of configuration files. Different systems may have different filenames. But the general idea is the same. First of all, it is recommended to create backups of the configuration files which are going to be changed.
+To configure wi-fi you will need to modify a couple of configuration files. Different systems may have different filenames but the general idea is the same. First of all, it is recommended to create backups of the configuration files which you are going to change.
 
 ```bash
 sudo cp /etc/cloud/cloud.cfg.d/99-fake_cloud.cfg /etc/cloud/cloud.cfg.d/99-fake_cloud.cfg.old
@@ -38,7 +38,7 @@ Add the following line to `/etc/cloud/cloud.cfg.d/99-fake_cloud.cfg`:
 network: {config: disabled}
 ```
    
-Now let's write your wi-fi configuration to `/etc/netplan/50-cloud-init.yaml`:
+Now let's describe your wi-fi configuration in `/etc/netplan/50-cloud-init.yaml`:
 
 ```yaml
 network:
@@ -56,7 +56,7 @@ network:
 
 Replace `AccessPointName` and `SecretPassword` with the SSID and the password of your wi-fi connection.
 
-Now enter the following command in the console:
+Now enter the following commands in the console:
 
 ```bash
 sudo netplan generate
@@ -70,7 +70,7 @@ The second command may fail with an error because of [the bug](https://bugs.laun
 
 To install Mate desktop you will need either ethernet of wi-fi connection. Most likely, the former will be faster.
 
-If you want you can update your Ubuntu first (it is not recommended though). Just type the following commands in the console:
+If you want, you can update your Ubuntu first (it is not always recommended though). Just type the following commands in the console:
 
 ```bash
 sudo apt-get update
@@ -89,11 +89,11 @@ To install Mate desktop use the following command:
 sudo apt-get install ubuntu-mate-desktop
 ```
 
-After some time (which mostly depends on your connection) all the necessary packages will be downloaded and installed. After reboot you can choose which desktop to use. The one which you select will be used as default.
+You will have to wait for some time (which depends on your connection) till all the necessary packages will be downloaded and installed. After reboot you can choose which desktop to use. The one which you select will be used as default.
 
 ### Configure Display
 
-If your desktop doesn't fit the screen you can try adding the following line to `/boot/firmware/usercfg.txt`:
+If your desktop doesn't fit the screen, you can try adding the following line to `/boot/firmware/usercfg.txt`:
 
 ```ini
 disable_overscan=1
@@ -105,8 +105,7 @@ In this file you can reconfigure display options. For example, you can specify G
 gpu_mem=128
 ```
 
-More information on video option can be found [here](https://www.raspberrypi.org/documentation/configuration/config-txt/video.md). Also, there is [a page](https://www.raspberrypi.org/documentation/configuration/hdmi-config.md) with the official documentation on the HDMI configuration.
-
+The official documentation contains more information on [video option](https://www.raspberrypi.org/documentation/configuration/config-txt/video.md) [HDMI configuration](https://www.raspberrypi.org/documentation/configuration/hdmi-config.md).
 
 If you have a monitor with resulution 2560x1440, it may be difficult to find a configuration for it. As an option, you can try to add the following lines to your `/boot/firmware/usercfg.txt`:
 
@@ -123,7 +122,7 @@ max_framebuffer_height=1440
 
 ### Useful Commands
 
-Prints current temperature:
+Prints current CPU temperature:
 
 ```bash
 cat /sys/class/thermal/thermal_zone0/temp
